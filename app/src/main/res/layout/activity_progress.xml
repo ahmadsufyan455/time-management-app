@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,179 +7,185 @@
     android:background="@color/mainBackground"
     tools:context=".view.activity.ProgressActivity">
 
-    <RelativeLayout
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <com.google.android.material.appbar.AppBarLayout
-            android:id="@+id/appBar"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="?attr/colorPrimary"
+                android:minHeight="?attr/actionBarSize"
+                android:theme="?attr/actionBarTheme"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:titleTextColor="@android:color/white" />
+
+            <TextView
+                android:id="@+id/txt_activity_progress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/m_bold"
+                android:text="@string/activity_progress"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appBar">
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
+            <ImageView
+                android:id="@+id/img_activity_progress"
+                android:layout_width="273dp"
+                android:layout_height="200dp"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="20dp"
+                android:contentDescription="@string/activity_progress"
+                android:src="@drawable/activity_progress" />
 
-                <androidx.appcompat.widget.Toolbar
-                    android:id="@+id/toolbar"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="?attr/colorPrimary"
-                    android:minHeight="?attr/actionBarSize"
-                    android:theme="?attr/actionBarTheme"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:titleTextColor="@android:color/white" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img_activity_progress"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/v1"
+                tools:ignore="ContentDescription" />
 
-                <TextView
-                    android:id="@+id/txt_activity_progress"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/m_bold"
-                    android:text="@string/activity_progress"
-                    android:textColor="@android:color/white"
-                    android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_above="@id/btn_end_activity"
+                android:layout_alignParentStart="true"
+                android:src="@drawable/v2"
+                tools:ignore="ContentDescription" />
 
-            </androidx.constraintlayout.widget.ConstraintLayout>
+            <TextView
+                android:id="@+id/label_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img_activity_progress"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="34dp"
+                android:fontFamily="@font/m_semi_bold"
+                android:text="@string/activity"
+                android:textSize="18sp" />
 
-        </com.google.android.material.appbar.AppBarLayout>
+            <TextView
+                android:id="@+id/txt_activity_name"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label_activity"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/m_regular"
+                android:gravity="center"
+                android:text="@string/activity_name"
+                android:textSize="18sp" />
 
-        <ImageView
-            android:id="@+id/img_activity_progress"
-            android:layout_width="273dp"
-            android:layout_height="200dp"
-            android:layout_below="@id/appBar"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:contentDescription="@string/activity_progress"
-            android:src="@drawable/activity_progress" />
+            <TextView
+                android:id="@+id/label_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_activity_name"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/m_semi_bold"
+                android:text="@string/type"
+                android:textSize="18sp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/img_activity_progress"
-            android:layout_alignParentEnd="true"
-            android:src="@drawable/v1"
-            tools:ignore="ContentDescription" />
+            <TextView
+                android:id="@+id/txt_activity_type"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label_type"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/m_regular"
+                android:text="@string/soft"
+                android:textSize="18sp" />
 
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_above="@id/btn_end_activity"
-            android:layout_alignParentStart="true"
-            android:src="@drawable/v2"
-            tools:ignore="ContentDescription" />
+            <TextView
+                android:id="@+id/label_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_activity_type"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/m_semi_bold"
+                android:text="@string/start_at"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/label_activity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/img_activity_progress"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="34dp"
-            android:fontFamily="@font/m_semi_bold"
-            android:text="@string/activity"
-            android:textSize="18sp" />
+            <TextView
+                android:id="@+id/txt_start_at"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label_start"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/m_regular"
+                android:text="@string/start_at_09"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/txt_activity_name"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/label_activity"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="6dp"
-            android:fontFamily="@font/m_regular"
-            android:gravity="center"
-            android:text="@string/activity_name"
-            android:textSize="18sp" />
+            <TextView
+                android:id="@+id/label_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_start_at"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/m_semi_bold"
+                android:text="@string/duration"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/label_type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_activity_name"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/m_semi_bold"
-            android:text="@string/type"
-            android:textSize="18sp" />
+            <Chronometer
+                android:id="@+id/txt_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/label_duration"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/m_regular"
+                android:text="@string/_00_45"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/txt_activity_type"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/label_type"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="6dp"
-            android:fontFamily="@font/m_regular"
-            android:text="@string/soft"
-            android:textSize="18sp" />
+            <Button
+                android:id="@+id/btn_end_activity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txt_duration"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="50dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/btn_bg"
+                android:paddingStart="64dp"
+                android:paddingEnd="64dp"
+                android:text="@string/end_activity"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
 
-        <TextView
-            android:id="@+id/label_start"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_activity_type"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/m_semi_bold"
-            android:text="@string/start_at"
-            android:textSize="18sp" />
+        </RelativeLayout>
 
-        <TextView
-            android:id="@+id/txt_start_at"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/label_start"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="6dp"
-            android:fontFamily="@font/m_regular"
-            android:text="@string/start_at_09"
-            android:textSize="18sp" />
+    </ScrollView>
 
-        <TextView
-            android:id="@+id/label_duration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_start_at"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:fontFamily="@font/m_semi_bold"
-            android:text="@string/duration"
-            android:textSize="18sp" />
-
-        <Chronometer
-            android:id="@+id/txt_duration"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/label_duration"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="6dp"
-            android:fontFamily="@font/m_regular"
-            android:text="@string/_00_45"
-            android:textSize="18sp" />
-
-        <Button
-            android:id="@+id/btn_end_activity"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/txt_duration"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="50dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/btn_bg"
-            android:paddingStart="64dp"
-            android:paddingEnd="64dp"
-            android:text="@string/end_activity"
-            android:textAllCaps="false"
-            android:textColor="@android:color/white"
-            android:textSize="18sp" />
-
-    </RelativeLayout>
-
-</ScrollView>
+</RelativeLayout>
