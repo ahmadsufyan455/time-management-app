@@ -40,13 +40,13 @@ class ActivityHelper(context: Context) {
             null,
             null,
             null,
-            "$_ID ASC"
+            "$_ID DESC"
         )
     }
 
     // read date
     fun queryDate(): Cursor {
-        val query = "SELECT DISTINCT $DATE FROM $TABLE_NAME"
+        val query = "SELECT DISTINCT $DATE FROM $TABLE_NAME ORDER BY $_ID DESC"
         return database.rawQuery(query, null)
     }
 
@@ -59,7 +59,7 @@ class ActivityHelper(context: Context) {
             arrayOf(date),
             null,
             null,
-            null,
+            "$_ID DESC",
             null
         )
     }
