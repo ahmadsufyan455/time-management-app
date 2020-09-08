@@ -60,6 +60,15 @@
             android:layout_height="match_parent"
             android:padding="16dp">
 
+            <ImageView
+                android:id="@+id/img_today"
+                android:layout_width="164dp"
+                android:layout_height="92dp"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:src="@drawable/today"
+                tools:ignore="ContentDescription" />
+
             <TextView
                 android:id="@+id/txt_greet"
                 android:layout_width="wrap_content"
@@ -96,15 +105,6 @@
                 android:layout_marginTop="4dp"
                 android:fontFamily="@font/m_bold"
                 android:text="@string/date" />
-
-            <ImageView
-                android:id="@+id/img_today"
-                android:layout_width="164dp"
-                android:layout_height="92dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:src="@drawable/today"
-                tools:ignore="ContentDescription" />
 
         </RelativeLayout>
 

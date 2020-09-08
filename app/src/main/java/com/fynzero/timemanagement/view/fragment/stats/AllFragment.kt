@@ -68,6 +68,13 @@ class AllFragment : Fragment() {
             val activities = deferredActivity.await()
             if (activities.size > 0) {
                 statsAdapter.setDate(activities)
+                rv_all_stats.visibility = View.VISIBLE
+                img_no_stats.visibility = View.GONE
+                txt_no_data.visibility = View.GONE
+            } else {
+                rv_all_stats.visibility = View.GONE
+                img_no_stats.visibility = View.VISIBLE
+                txt_no_data.visibility = View.VISIBLE
             }
         }
     }
