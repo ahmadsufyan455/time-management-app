@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <SwitchPreference
+        app:defaultValue="false"
+        app:icon="@drawable/ic_notification"
+        app:key="@string/notification"
+        app:title="@string/reminder" />
+
+    <Preference
+        app:icon="@drawable/ic_translate"
+        app:key="@string/translate"
+        app:summary="@string/lang"
+        app:title="@string/lang_title" />
+
+</PreferenceScreen>
